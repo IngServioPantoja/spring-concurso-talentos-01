@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import static org.junit.Assert.assertEquals;
 import concursantes.Concursante;
 import concursantes.Malabarista;
@@ -14,6 +15,7 @@ public class TestConcursoTalentos {
 	private static Log logger = LogFactory.getLog("TestConcursoTalentos");
 	private Concursante malabarista1;
 
+	@SuppressWarnings("resource")
 	@Before
 	public void before() {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -23,7 +25,7 @@ public class TestConcursoTalentos {
 	@Test
 	public void testMalabarista() {
 		logger.info("Inicio de ejecutar Malabarista");
-		int noPelotas = 10;
+		int noPelotas = 5;
 		malabarista1.ejecutar();
 		assertEquals(noPelotas, ((Malabarista) malabarista1).getPelotas());
 		logger.info("Fin de Ejecutar Malabarista");
