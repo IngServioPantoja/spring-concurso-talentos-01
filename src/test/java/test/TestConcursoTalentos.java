@@ -23,7 +23,7 @@ public class TestConcursoTalentos {
 	@Test
 	public void testMalabarista() {
 		logger.info("Inicio de ejecutar Malabarista");
-		int noPelotas = 5;
+		int noPelotas = 10;
 		malabarista1.ejecutar();
 		assertEquals(noPelotas, ((Malabarista) malabarista1).getPelotas());
 		logger.info("Fin de Ejecutar Malabarista");
